@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Students in cloud class at Metro college</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Brilland Tago</a>
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>This page list all the students in the devops class</h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Picture</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last Name</th>
+        </thead>
+
+        <tbody>
+        <tr th:each="student: ${students}" >
+            <td th:text="${studentStat.index +1}"></td>
+            <td>
+                <img th:src="@{${'/images/' + student.gender + '.png'}}" width="50"/>
+            </td>
+            <td th:text="${student.firstName}"> </td>
+            <td th:text="${student.lastName}"> </td>
+        </tr>
+        </tbody>
+    </table>
+
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>
