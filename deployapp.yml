@@ -21,4 +21,4 @@
     - name: Stop running program
       shell: 'docker stop devops || true && docker rm devops || true'
     - name: Run project docker image
-      shell: 'docker run -d -p 8080:8080 --name devops brillandnkuete/devops'
+      shell: 'docker run -d -p 8080:8080 --name devops --restart always brillandnkuete/devops:latest'
