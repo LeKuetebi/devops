@@ -16,11 +16,11 @@ public class StudentService {
                 new Student("Wang","Larry", "boy"),
                 new Student("Yung","Jing", "boy"),
                 new Student("Aodele","Charles", "boy"),
-                new Student("","Abissola","girl"),
+                new Student("Adeyomoye","Abissola","girl"),
                 new Student("Bhutta","Mewhish","girl"),
                 new Student("Jia","Chen", "boy"),
-                new Student("Goody","Goody", "boy"),
-                new Student("Harun","Harun", "boy"));
+      //          new Student("Brilland","Tago", "boy"),
+                new Student("Tabi","Godwill", "boy"));
     }
 
 }
