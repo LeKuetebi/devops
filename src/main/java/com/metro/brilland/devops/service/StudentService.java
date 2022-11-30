@@ -21,11 +21,8 @@ public class StudentService {
                 new Student("Bhutta","Mewhish","girl"),
                 new Student("Jia","Chen", "boy"),
                 new Student("Goody","Goody", "boy"),
+                new Student("Harun","Harun", "boy"),
         new Student("Goody","Goody", "boy"));
     }
 
-    @PostConstruct
-    void print(){
-        System.out.println("Just constructed");
-    }
 }
