@@ -20,5 +20,7 @@
         enabled: yes
     - name: Stop running program
       shell: 'docker stop devops || true && docker rm devops || true'
+    - name: remove old image
+      shell: 'docker image rm -f brillandnkuete/devops:latest || true'
     - name: Run project docker image
       shell: 'docker run -d -p 8080:8080 --name devops --restart always brillandnkuete/devops:latest'
