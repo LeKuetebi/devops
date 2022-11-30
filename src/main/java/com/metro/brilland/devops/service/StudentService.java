@@ -3,7 +3,6 @@ package com.metro.brilland.devops.service;
 import com.metro.brilland.devops.dto.Student;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
