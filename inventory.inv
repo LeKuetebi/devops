@@ -1,0 +1,2 @@
+[devservers]
+172.31.93.245 ansible_user=ec2-user
