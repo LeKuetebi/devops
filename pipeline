@@ -1,0 +1,44 @@
+node {
+
+    stage('SCM Checkout') { // for display purposes
+
+        git branch: 'main', url: 'https://github.com/LeKuetebi/devops.git'
+    }
+
+    stage('Build') {
+        sh 'chmod +x mvnw'
+        sh 'mvn compile'
+    }
+
+    stage('Test') {
+        sh 'mvn test'
+    }
+
+
+    stage('Package') {
+        sh 'mvn -DskipTests package'
+    }
+
+    def dockerImage
+    stage('Build docker image') {
+        dockerImage = docker.build("brillandnkuete/devops")
+    }
+
+    stage('Push docker Image') {
+        docker.withRegistry('https://registry.hub.docker.com', 'DockerCred'){
+            dockerImage.push("${BUILD_NUMBER}")
+            dockerImage.push("latest")
+        }
+    }
+
+    stage("Deploy Artifact") {
+        ansiblePlaybook(
+            disableHostKeyChecking: true,
+            installation: 'Ansible',
+            inventory: 'inventory.inv',
+            playbook: 'deployapp.yml',
+            credentialsId: 'privateAnsibleKey'
+        )
+
+    }
+}
