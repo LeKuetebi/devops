@@ -19,7 +19,7 @@ public class StudentService {
                 new Student("Adeyomoye","Abissola","girl"),
                 new Student("Bhutta","Mewhish","girl"),
                 new Student("Jia","Chen", "boy"),
-      //          new Student("Brilland","Tago", "boy"),
+                new Student("Brilland","Tago", "boy"),
                 new Student("Tabi","Godwill", "boy"));
     }
 
